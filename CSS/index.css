@@ -1,0 +1,23 @@
+html {
+    background: url(./Pokeball_image.png) no-repeat center center fixed; 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+    color: whitesmoke;
+    font-style: italic;
+   font-family: Baskerville, 'Times New Roman', serif;
+    
+  }
+  
+.wrapper {
+    display: inline-block;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  padding: 50px;
+  position: relative;
+  }  
