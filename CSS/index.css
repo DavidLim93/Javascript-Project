@@ -1,5 +1,5 @@
 html {
-    background: url(./Pokeball_image.png) no-repeat center center fixed; 
+    background: url(./Pokeball_image.png) no-repeat center fixed; 
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -10,6 +10,10 @@ h1 {
     color: whitesmoke;
     font-style: italic;
    font-family: Baskerville, 'Times New Roman', serif;
+   text-align: center;
+   margin:auto;
+   align-items: center;
+   padding-bottom: 20px;
     
   }
   
@@ -19,5 +23,18 @@ h1 {
   height: 100%;
   margin: auto;
   padding: 50px;
-  position: relative;
   }  
+
+  .topnav {
+    align-items: center;
+    text-align: center;
+  }
+
+  body{ 
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center;
+    margin: 0 auto;
+    width: 100%;
+}
+
