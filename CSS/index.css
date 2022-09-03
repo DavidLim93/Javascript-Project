@@ -1,5 +1,5 @@
 html {
-    background: url(./Pokeball_image.png) no-repeat center fixed; 
+    background: url(./Pokeball.png) no-repeat center fixed; 
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -7,7 +7,7 @@ html {
 h1 {
     font-size: 80px;
     font-weight: bold;
-    color: whitesmoke;
+    color: black;
     font-style: italic;
    font-family: Baskerville, 'Times New Roman', serif;
    text-align: center;
@@ -38,5 +38,27 @@ h1 {
     width: 90%;
 }
 
+.pokemon {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 250px;
+  background-color: lightgray;
+  border: solid;
+  border-color: black;
+  margin-top: 50px;
+  height: 150px;
+
+}
 
 
+
+.pokemon .info {
+  width: 100px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
