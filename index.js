@@ -14,25 +14,10 @@ const name = document.getElementById('search').value
     .then (response => response.json())
     .then ( id => {
 
-        if (id) {
-          
-            pokemonCard (id)
-        }
-        else {
-            
-            const pokeEle= document.createElement('div');
-
-            pokeEle.classList.add('pokemon');
-
-            pokeInnerHTML = `
-                <h3>Pokemon not found</h3>
-            `
-            pokeEle.innerHTML = pokeInnerHTML;
-    form.appendChild(pokeEle);
-        }
+        pokemonCard (id)
     }
     )
-    .catch ( error => console.log(error))
+    .catch ( error => alert ("Pokemon does not exist!"))
 
 }
 
@@ -47,33 +32,34 @@ function pokemonCard (pokemon) {
 
     const {id, name, sprites, types} = pokemon;
 
-    const type = pokemon.types[0].type.name;
+   
+    const type1 = pokemon.types[0].type.name;
+    // const type2 = pokemon.types[1].type.name;
 
 
 
-    const pokeInnerHTML = `
-    <div class="img-container">
-    <img src="${sprites.front_default}" alt="${name}" />
-  </div>
-  <div class="info">
-    <span class="number"><strong>${id}</strong></span>
-    <h3 class="name">${name}</h3>
-    <p class="type">Type: <span>${type}</span></p>
-  </div>
-
-    `
-
-
+ const pokeInnerHTML = 
+  `
+        <div class="img-container">
+        <img src="${sprites.front_default}" alt="${name}" />
+      </div>
+      <div class="info">
+        <span class="number"><strong>${id}</strong></span>
+        <h3 class="name">${name}</h3>
+        <p class="type">Type: <span>${type1}</span></p>
+        
+      </div>
+        `
+        // <p class="type">Type: <span>${type2}</span></p>
+ 
+ 
     pokeEle.innerHTML = pokeInnerHTML;
-    form.appendChild(pokeEle);
-
+    form.appendChild(pokeEle)
   
 
 }
 
-function reset () {
-    document.getElementById('pokemon-search').reset
-}
+
 
 
 form.addEventListener("submit", function (e) {
@@ -81,10 +67,11 @@ form.addEventListener("submit", function (e) {
 
 
     const pokemon = search.value;
-    if (pokemon) {
+     if (pokemon) {
         fetchPokemon(pokemon);
  
-     search.value="";
+        search.value="";
          }
-
+  
     })
+
