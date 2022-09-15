@@ -15,13 +15,14 @@ const name = document.getElementById('search').value
     .then (response => response.json())
     .then ( id => {
 
+     
         pokemonCard (id);
         
     }
     )
-    .catch ( error => 
-        // alert (`Pokemon does not exist!`)
-        console.log(error)
+    .catch ( (error) => 
+        alert (`Pokemon does not exist!`),
+        // console.log(error)
         )
 
 }
@@ -67,16 +68,24 @@ function pokemonCard (pokemon) {
 
 }
 
+function resetSearch () {
 
+    pokeContainer.innerHTML = ""
+  
+}
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
 
+    resetSearch ()
 
     const pokemon = search.value;
      if (pokemon) {
+
+
         fetchPokemon(pokemon);
  
+
         search.value="";
          }
   
