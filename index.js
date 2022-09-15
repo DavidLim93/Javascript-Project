@@ -10,8 +10,9 @@ function fetchPokemon() {
 
 
 const name = document.getElementById('search').value
+// name.toLowerCase();
 
-    fetch(api + name)
+    fetch(api + name.toLowerCase())
     .then (response => response.json())
     .then ( id => {
 
@@ -21,8 +22,8 @@ const name = document.getElementById('search').value
     }
     )
     .catch ( (error) => 
-        alert (`Pokemon does not exist!`),
-        // console.log(error)
+        // alert (`Pokemon does not exist!`),
+        console.log(error)
         )
 
 }
@@ -41,10 +42,12 @@ function pokemonCard (pokemon) {
     const type1 = pokemon.types[0].type.name;
     const type2 = pokemon.types[1] == null ? "" : pokemon.types[1].type.name
     const ability1 = pokemon.abilities[0].ability.name
+      const newAbility1 = ability1.replace(/[^a-zA-Z0-9 ]/g, " ");
     const ability2 = pokemon.abilities[1] == null ? "" : pokemon.abilities[1].ability.name
+     const newAbility2 = ability2.replace(/[^a-zA-Z0-9 ]/g, " ");
     const ability3 = pokemon.abilities[2] == null ? "" : pokemon.abilities[2].ability.name
-  
-
+      const newAbility3 = ability3.replace(/[^a-zA-Z0-9 ]/g, " ");
+    
 
  const pokeInnerHTML = 
   `
@@ -55,11 +58,13 @@ function pokemonCard (pokemon) {
         <span class="number"><strong>${id}</strong></span>
         <h3 class="name" style="text-transform:uppercase">${name}</h3>
         <p class="type" style="text-transform:capitalize"><strong>Type:</strong> <span>${type1} ${type2}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${ability1}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${ability2}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${ability3}</span></p>
+        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility1}</span></p>
+        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility2}</span></p>
+        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility3}</span></p>
       </div>
         `
+
+        
 
     pokeEle.innerHTML = pokeInnerHTML;
     pokeContainer.appendChild(pokeEle);
@@ -74,21 +79,26 @@ function resetSearch () {
   
 }
 
+
+
 form.addEventListener("submit", function (e) {
     e.preventDefault()
 
     resetSearch ()
 
     const pokemon = search.value;
-     if (pokemon) {
+    const newPokemon = pokemon.toLowerCase();
+
+     if (newPokemon) {
 
 
-        fetchPokemon(pokemon);
+        fetchPokemon(newPokemon);
  
 
         search.value="";
          }
-  
+         
+
   
     })
 
