@@ -11,8 +11,6 @@
 
     <h1>Pokedex</h1>
 
-
-    <section class="container">
     <form id="pokemon-search">
         <input id='search' type='text' name='search'>
         <input type='submit' name ='submit'  value='Throw Pokeball'/>
@@ -20,7 +18,17 @@
       <div id="pokemon">
 
       </div>
-    </section>
+
+      <div id="comment-section">
+      <form id="pokemon-comment">
+        <input type="text" id="comment-box" placeholder="Enter comment">
+        <button id="comment">Comment</button>
+        <ul id="allComments">
+            <h3>Comments</h3>
+
+        </ul>
+    </form>
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>

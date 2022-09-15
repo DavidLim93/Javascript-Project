@@ -2,7 +2,9 @@ const api = `https://pokeapi.co/api/v2/pokemon/`
 const search = document.getElementById('search')
 const form = document.getElementById('pokemon-search')
 const pokeContainer = document.getElementById(`pokemon`)
-
+const comment = document.getElementById('allComments')
+const commentValue = document.getElementById('comment-box')
+const button = document.getElementById('comment')
 
 
 function fetchPokemon() {
@@ -63,12 +65,10 @@ function pokemonCard (pokemon) {
         <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility3}</span></p>
       </div>
         `
-
-        
+  
 
     pokeEle.innerHTML = pokeInnerHTML;
     pokeContainer.appendChild(pokeEle);
-  
 
 
 }
@@ -80,25 +80,38 @@ function resetSearch () {
 }
 
 
+function comments () {
+  
+  const commentBox = commentValue.value
+
+  const CommentEle = document.createElement("p");
+  CommentEle.classList.add('commentEle')
+  CommentEle.innerText = commentBox
+  comment.appendChild(CommentEle)
+
+
+}
 
 form.addEventListener("submit", function (e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    resetSearch ()
+    resetSearch ();
 
     const pokemon = search.value;
-    const newPokemon = pokemon.toLowerCase();
 
-     if (newPokemon) {
-
-
-        fetchPokemon(newPokemon);
- 
-
+     if (pokemon) {
+        fetchPokemon(pokemon);
         search.value="";
          }
-         
-
-  
+ 
     })
 
+
+
+button.addEventListener ('click', function (e) {
+
+  e.preventDefault();
+
+  comments ()
+
+})

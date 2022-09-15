@@ -63,3 +63,31 @@ h1 {
   padding-top: 10px;
   text-align: center;
 }
+
+#pokemon-comment {
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#allComments {
+  border: 2px solid;
+  border-color: black;
+  background-color: orange;
+  justify-content: center;
+  min-height: 40px;
+  max-height: 100%;
+  color: black;
+  
+ 
+}
+
+#commentEle {
+  display: inline-block;
+  margin: 0 auto;
+  justify-content: center;
+  text-align: center;
+  min-width: 50px;
+  max-width: 300px;
+  padding-bottom: 5px;
+}
