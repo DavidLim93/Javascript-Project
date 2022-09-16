@@ -24,8 +24,8 @@ const name = document.getElementById('search').value
     }
     )
     .catch ( (error) => 
-        // alert (`Pokemon does not exist!`),
-        console.log(error)
+        alert (`Pokemon does not exist!`),
+        // console.log(error)
         )
 
 }
