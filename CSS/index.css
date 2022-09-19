@@ -7,13 +7,25 @@ html {
 h1 {
     font-size: 80px;
     font-weight: bold;
-    color: black;
+    /* background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(255,0,0,1) 65%, rgba(255,168,0,1) 100%); */
+    /* color: whitesmoke;     */
     font-style: italic;
    font-family: Baskerville, 'Times New Roman', serif;
    text-align: center;
    margin:auto;
    align-items: center;
    padding-bottom: 20px;
+   background: -webkit-linear-gradient(left,#020024 0%, #090979 35%, #00d4ff 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+
+  }
+
+
+  h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-size: 15px;
     
   }
   
@@ -73,11 +85,12 @@ h1 {
 #allComments {
   border: 2px solid;
   border-color: black;
-  background-color: orange;
+  background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 41%, rgba(179,53,53,1) 52%, rgba(255,0,0,1) 63%);
   justify-content: center;
   min-height: 40px;
   max-height: 100%;
   color: black;
+
   
  
 }
@@ -90,4 +103,8 @@ h1 {
   min-width: 50px;
   max-width: 300px;
   padding-bottom: 5px;
+}
+
+#comment-section {
+  margin-top: 50px;
 }
