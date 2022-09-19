@@ -25,7 +25,11 @@ const name = document.getElementById('search').value
     )
     .catch ( (error) => 
         alert (`Pokemon does not exist!`),
+<<<<<<< HEAD
         // console.log(error)
+=======
+//         console.log(error)
+>>>>>>> afda328c613d46bfe50409e633cf363efed668a8
         )
 
 }
