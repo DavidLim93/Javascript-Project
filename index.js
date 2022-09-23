@@ -59,9 +59,9 @@ function pokemonCard (pokemon) {
         <span class="number"><strong>${id}</strong></span>
         <h3 class="name" style="text-transform:uppercase">${name}</h3>
         <p class="type" style="text-transform:capitalize"><strong>Type:</strong> <span>${type1} ${type2}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility1}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility2}</span></p>
-        <p class="type" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility3}</span></p>
+        <p class="ability" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility1}</span></p>
+        <p class="ability" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility2}</span></p>
+        <p class="ability" style="text-transform:capitalize"><strong>Ability:</strong> <span>${newAbility3}</span></p>
       </div>
         `
   
@@ -96,15 +96,9 @@ form.addEventListener("submit", function (e) {
 
     resetSearch ();
 
-    const pokemon = search.value;
+    fetchPokemon(pokemon);
 
-     if (pokemon) {
-        fetchPokemon(pokemon);
-        search.value="";
-         }
- 
-    })
-
+})
 
 
 button.addEventListener ('click', function (e) {
